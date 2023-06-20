@@ -13,17 +13,17 @@ class Movie{
     public function getDurata($durata){
         $this->durata= $durata;
         if($durata < 30){
-            $this->durata = 'cortometraggio';
+            $this->durata = 'Cortometraggio';
         }elseif ($durata >= 30 && $durata <= 90){
-            $this->durata = 'film';
+            $this->durata = 'Film';
         }else{
-            $this->durata = 'pippone';
+            $this->durata = 'Pippone';
         }
     }
 
 }
 
-$film = new Movie("mia","ita");
+$film = new Movie("Pinocchio","Ita");
 $film->getDurata(100);
 
 ?>
@@ -52,7 +52,7 @@ $film->getDurata(100);
 
         <h2>ESEGUO UN METODO E RECUPERO PAROLA</h2>
         <p>
-            la durata è : <br> <?php echo $film->durata ?>
+            La durata è : <br> <?php echo $film->durata ?>
         </p>
     </main>
 </body>
