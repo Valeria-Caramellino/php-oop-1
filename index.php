@@ -1,29 +1,11 @@
 <?php 
-class Movie{
-    public $titolo;
-    public $durata= 0;
-    public $lingua;
+require __DIR__ . '/genere.php';
+require __DIR__ . '/movie.php';
 
-    function __construct($titolo , $lingua)
-    {
-        $this->titolo = $titolo;
-        $this->lingua = $lingua;
-        
-    }
-    public function getDurata($durata){
-        $this->durata= $durata;
-        if($durata < 30){
-            $this->durata = 'Cortometraggio';
-        }elseif ($durata >= 30 && $durata <= 90){
-            $this->durata = 'Film';
-        }else{
-            $this->durata = 'Pippone';
-        }
-    }
 
-}
+$genereFilm = new Genere('pscico','icona');
 
-$film = new Movie("Pinocchio","Ita");
+$film = new Movie('mia','ita', $genereFilm);
 $film->getDurata(100);
 
 ?>
@@ -54,6 +36,10 @@ $film->getDurata(100);
         <p>
             La durata è : <br> <?php echo $film->durata ?>
         </p>
+
+        <h2>Genere</h2>
+        <p>il tipo di genere: <br><?php echo $film->gen->nome ?> </p>
+        <p><?php echo $film->gen->icona ?></p>
     </main>
 </body>
 </html>
