@@ -3,9 +3,8 @@ require __DIR__ . '/genere.php';
 require __DIR__ . '/movie.php';
 
 
-$genereFilm = new Genere('pscico','icona');
 
-$film = new Movie('mia','ita', $genereFilm);
+$film = new Movie('mia','ita', new Genere('sci-fi','icons'));
 $film->getDurata(100);
 
 ?>
